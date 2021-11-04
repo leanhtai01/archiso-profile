@@ -1,0 +1,3 @@
+[submodule "airootfs/root/archconfig"]
+	path = airootfs/root/archconfig
+	url = https://github.com/leanhtai01/archconfig
