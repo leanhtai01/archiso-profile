@@ -9,6 +9,7 @@ cp -r mount_point/git_repos/archconfig .
 
 (
     cd archconfig;
+    git pull --ff-only
     git stash pop;
 )
 
