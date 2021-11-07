@@ -12,11 +12,5 @@ cp -r /run/media/leanhtai01/data_drive/git_repos/archiso_profile $current_dir
     git stash pop;
 )
 
-(
-    cd $current_dir/archiso_profile/airootfs/root/archconfig;
-    git pull --ff-only
-    git stash pop;
-)
-
 sudo mkarchiso -v archiso_profile
 
