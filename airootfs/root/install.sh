@@ -19,7 +19,7 @@ cp -r mount_point/git_repos/archconfig .
 # check whether Windows partitions (1-4) is exists
 for i in {1..4}
 do
-    partition="${device}p${i}"
+    partition="/dev/${device}p${i}"
     if ! [[ -b "$partition" ]]
     then
         is_dual_boot="n"
@@ -27,12 +27,11 @@ do
     fi
 done
 
-if [[ "$is_dual_boot" -eq "y" ]]
+if [[ $is_dual_boot = "y" ]]
 then
     # dual-boot with Windows
     sed -i "/^size_of_ram=16/s/16/5/" $current_dir/archconfig/system_install/set_install_info.sh
     sed -i "/^user_choice=2/s/2/5/" $current_dir/archconfig/system_install/set_install_info.sh
-else
-    # only Arch Linux
-    $current_dir/archconfig/install_arch_linux.sh
 fi
+
+$current_dir/archconfig/install_arch_linux.sh
