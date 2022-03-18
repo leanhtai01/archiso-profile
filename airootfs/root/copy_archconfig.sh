@@ -9,6 +9,12 @@ then
     $current_dir/mount_encrypted_data_drive.sh
 fi
 
+# delete existing archconfig (if any)
+if [ -d "archconfig" ]
+then
+    rm -rf archconfig
+fi
+
 cp -r mount_point/git_repos/archconfig .
 
 (
