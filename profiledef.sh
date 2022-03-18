@@ -22,6 +22,7 @@ file_permissions=(
   ["/root/install.sh"]="0:0:755"
   ["/root/connect_wifi_iwd.sh"]="0:0:755"
   ["/root/copy_archconfig.sh"]="0:0:755"
+  ["/root/unmount_encrypted_data_drive.sh"]="0:0:755"
   ["/usr/local/bin/choose-mirror"]="0:0:755"
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
