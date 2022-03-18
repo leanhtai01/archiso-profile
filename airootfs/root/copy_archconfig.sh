@@ -2,18 +2,11 @@
 
 set -e
 
+current_dir=$(dirname $0)
+
 if ! [ -d "mount_point" ]
 then
-    password=
-
-    if [ -z "$password" ]
-    then
-        read -e -p "Enter disk's password: " password
-    fi
-
-    mkdir -p mount_point
-    printf "$password" | cryptsetup open /dev/sda1 data_drive -
-    mount /dev/mapper/data_drive mount_point
+    $current_dir/mount_encrypted_data_drive.sh
 fi
 
 cp -r mount_point/git_repos/archconfig .
